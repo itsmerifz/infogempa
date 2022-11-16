@@ -1,28 +1,29 @@
 import React from "react";
 
 const Content = ({ data }) => {
+  console.log(data);
   return (
     <div className="flex justify-center w-screen items-center">
       <div className="card w-3/4 h-2/3 bg-base-200 p-3">
-        <div className="flex justify-between">
+        <div className="flex justify-center">
           <div className="flex flex-col justify-center">
             <span className="text-2xl font-bold">Gempa Terkini</span>
             {data && (
-              <div className="card-body flex-row justify-center">
+              <div className="card-body flex-row justify-between gap-24">
                 <div className="flex flex-col gap-4">
                   <h1 className="text-6xl font-bold text-error">
-                    {data.Infogempa.gempa.Magnitude}
+                    {data.data.magnitude}
                     <span className="text-white text-3xl">S.R.</span>
                   </h1>
-                  <p>Tanggal : {data.Infogempa.gempa.Tanggal}</p>
-                  <p>Jam : {data.Infogempa.gempa.Jam}</p>
-                  <p>Kedalaman: {data.Infogempa.gempa.Kedalaman}</p>
-                  <p>Wilayah yang dirasakan : {data.Infogempa.gempa.Wilayah}</p>
-                  <p>Potensi: {data.Infogempa.gempa.Potensi}</p>
-                  <p>Dirasakan : {data.Infogempa.gempa.Dirasakan}</p>
+                  <p>Tanggal : {data.data.tanggal}</p>
+                  <p>Jam : {data.data.jam}</p>
+                  <p>Kedalaman: {data.data.kedalaman}</p>
+                  <p>Wilayah yang dirasakan : {data.data.wilayah}</p>
+                  <p>Potensi: {data.data.potensi}</p>
+                  <p>Dirasakan : {data.data.dirasakan}</p>
                 </div>
                 <img
-                  src={`https://data.bmkg.go.id/DataMKG/TEWS/${data.Infogempa.gempa.Shakemap}`}
+                  src={`${data.data.shakemap}`}
                   height={150}
                   width={350}
                   alt="shakemap"

@@ -10,6 +10,6 @@ const config = {
 
 export const getData = async () => {
   
-  const { data } = await axios.get(`https://data.bmkg.go.id/DataMKG/TEWS/autogempa.json`, config);
+  const { data } = await axios.get(`https://cuaca-gempa-rest-api.vercel.app/quake`);
   return data;
 };
